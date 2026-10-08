@@ -74,7 +74,7 @@ export default async function DashboardPage() {
             {profileAvatar ? (
               // eslint-disable-next-line @next/next/no-img-element
               <img src={profileAvatar} alt="" className="h-full w-full object-cover" />
-            ) : (profileName || user.email || "P").charAt(0).toUpperCase()}
+            ) : (profileName || user.email || "C").charAt(0).toUpperCase()}
           </div>
           <div className="min-w-0 flex-1">
             <h2 className="truncate text-lg font-semibold text-white">{profileName || user.email}</h2>

@@ -8,7 +8,7 @@
  */
 
 export const SQL_DDL = `
--- PromptFolio schema (run via scripts/migrate.ts or paste into Supabase SQL editor)
+-- CreatorIQ schema (run via scripts/migrate.ts or paste into Supabase SQL editor)
 
 create extension if not exists vector;
 create extension if not exists "pgcrypto";

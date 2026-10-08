@@ -7,7 +7,7 @@ import UserMenu from "@/components/auth/UserMenu";
 import { isMissingAuthSession } from "@/lib/supabase/auth-errors";
 
 /**
- * Shared PromptFolio navigation with signed-in account actions.
+ * Shared CreatorIQ navigation with signed-in account actions.
  */
 export default function Nav({
   children,
@@ -48,8 +48,8 @@ export default function Nav({
   return (
     <nav className="relative z-10 mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-5 md:px-8">
       <Link href="/" className="flex shrink-0 items-center gap-2">
-        <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-purple-500 to-pink-500 text-sm font-bold text-white">P</span>
-        <span className="text-xl font-semibold text-white">PromptFolio</span>
+        <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-purple-500 to-pink-500 text-sm font-bold text-white">C</span>
+        <span className="text-xl font-semibold text-white">CreatorIQ</span>
       </Link>
       <div className="flex items-center gap-2 sm:gap-3">
         <Link href="/creators" className="px-2 py-2 text-sm text-gray-300 transition hover:text-white sm:px-3">

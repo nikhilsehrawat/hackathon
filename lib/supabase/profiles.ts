@@ -48,7 +48,7 @@ export async function createProfileForAuthUser(
   if (userError) throw userError;
 
   const defaultName =
-    displayName?.trim() || identity.email.split("@")[0] || "PromptFolio member";
+    displayName?.trim() || identity.email.split("@")[0] || "CreatorIQ member";
 
   if (role === "creator") {
     const { error } = await admin.from("creators").upsert(

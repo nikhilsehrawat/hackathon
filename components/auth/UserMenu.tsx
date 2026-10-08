@@ -86,10 +86,10 @@ export default function UserMenu() {
       void loadProfile();
     });
     const refreshProfile = () => void loadProfile();
-    window.addEventListener("promptfolio:profile-updated", refreshProfile);
+    window.addEventListener("creatoriq:profile-updated", refreshProfile);
     return () => {
       active = false;
-      window.removeEventListener("promptfolio:profile-updated", refreshProfile);
+      window.removeEventListener("creatoriq:profile-updated", refreshProfile);
       subscription.unsubscribe();
     };
   }, []);

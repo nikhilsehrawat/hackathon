@@ -7,7 +7,7 @@ import { Bot, MessageCircle, RotateCcw, Sparkles, X } from "lucide-react";
 import ChatInput from "@/components/chat/ChatInput";
 import ChatMessage, { type ChatMessageData } from "@/components/chat/ChatMessage";
 
-const STORAGE_KEY = "promptfolio-chat-history";
+const STORAGE_KEY = "creatoriq-chat-history";
 const QUICK_PROMPTS = [
   "Find a cinematic creator",
   "How does matching work?",
@@ -15,7 +15,7 @@ const QUICK_PROMPTS = [
 ];
 const WELCOME_MESSAGE: ChatMessageData = {
   role: "assistant",
-  content: "👋 Hi! I'm the PromptFolio assistant. I can help you:\n• Find AI creators for your campaign\n• Understand how matching works\n• Explain verification signals\n• Browse top creators\nWhat would you like to know?",
+  content: "👋 Hi! I'm the CreatorIQ assistant. I can help you:\n• Find AI creators for your campaign\n• Understand how matching works\n• Explain verification signals\n• Browse top creators\nWhat would you like to know?",
 };
 
 function readStoredMessages(): ChatMessageData[] {
@@ -132,7 +132,7 @@ export default function ChatBot() {
     <div className="fixed bottom-6 left-6 z-50">
       {open && (
         <section
-          aria-label="PromptFolio Assistant chat"
+          aria-label="CreatorIQ Assistant chat"
           className="glass absolute bottom-20 left-0 flex h-[min(500px,70vh)] w-[calc(100vw-3rem)] max-w-96 flex-col overflow-hidden rounded-2xl shadow-2xl shadow-black/50 animate-[slideInLeft_0.3s_ease-out] sm:h-[500px]"
         >
           <header className="flex shrink-0 items-center justify-between bg-gradient-to-r from-purple-600 to-pink-600 px-4 py-3">
@@ -141,7 +141,7 @@ export default function ChatBot() {
                 <Sparkles size={17} aria-hidden="true" />
               </span>
               <div className="min-w-0">
-                <h2 className="truncate text-sm font-semibold text-white">PromptFolio Assistant</h2>
+                <h2 className="truncate text-sm font-semibold text-white">CreatorIQ Assistant</h2>
                 <p className="flex items-center gap-1.5 text-xs text-white/80">
                   <span className="h-1.5 w-1.5 rounded-full bg-emerald-300" />
                   Online
@@ -232,7 +232,7 @@ export default function ChatBot() {
       <button
         type="button"
         onClick={() => setOpen((value) => !value)}
-        aria-label={open ? "Close PromptFolio Assistant" : "Open PromptFolio Assistant"}
+        aria-label={open ? "Close CreatorIQ Assistant" : "Open CreatorIQ Assistant"}
         aria-expanded={open}
         className={`flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-purple-600 to-pink-600 text-white shadow-lg shadow-purple-900/40 transition duration-200 hover:scale-105 hover:shadow-purple-500/30 ${open ? "" : "animate-[chatPulse_2.8s_ease-in-out_infinite]"}`}
       >

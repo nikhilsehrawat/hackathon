@@ -81,7 +81,7 @@ export default function SettingsPanel({
   }
 
   async function deleteAccount() {
-    const confirmed = window.confirm("This permanently deletes your PromptFolio account and profile. Continue?");
+    const confirmed = window.confirm("This permanently deletes your CreatorIQ account and profile. Continue?");
     if (!confirmed) return;
     const typed = window.prompt('Type DELETE to confirm permanent account deletion.');
     if (typed !== "DELETE") return;
@@ -139,7 +139,7 @@ export default function SettingsPanel({
       )}
       <section className="glass rounded-2xl border border-red-400/20 p-6">
         <h2 className="text-lg font-semibold text-red-200">Delete account</h2>
-        <p className="mt-2 text-sm text-gray-400">Permanently remove your sign-in and PromptFolio profile data.</p>
+        <p className="mt-2 text-sm text-gray-400">Permanently remove your sign-in and CreatorIQ profile data.</p>
         <button type="button" disabled={deleting} onClick={() => void deleteAccount()} className="mt-4 rounded-xl border border-red-400/30 bg-red-500/10 px-5 py-3 text-sm text-red-200 disabled:opacity-60">{deleting ? "Deleting..." : "Delete account"}</button>
       </section>
       {toast && <Toast message={toast.message} type={toast.type} onClose={() => setToast(null)} />}

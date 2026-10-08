@@ -1,5 +1,5 @@
 /**
- * PromptFolio — core domain types (strict mode).
+ * CreatorIQ — core domain types (strict mode).
  */
 
 export type UserRole = "brand" | "creator";

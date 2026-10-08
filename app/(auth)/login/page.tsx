@@ -8,9 +8,9 @@ function LoginPanel({ initialError }: { initialError?: string }) {
     <section className="glass animate-fade-in rounded-2xl p-8 shadow-2xl shadow-purple-950/30">
       <Link href="/" className="mb-8 flex items-center justify-center gap-2">
         <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 font-bold text-white">
-          P
+          C
         </span>
-        <span className="text-xl font-semibold text-white">PromptFolio</span>
+        <span className="text-xl font-semibold text-white">CreatorIQ</span>
       </Link>
       <div className="mb-7 text-center">
         <h1 className="text-3xl font-bold text-white">Welcome back</h1>
@@ -20,7 +20,7 @@ function LoginPanel({ initialError }: { initialError?: string }) {
       </div>
       <LoginForm initialError={initialError} />
       <p className="mt-6 text-center text-sm text-gray-400">
-        New to PromptFolio?{" "}
+        New to CreatorIQ?{" "}
         <Link href="/signup" className="font-medium text-purple-300 hover:text-purple-200">
           Create an account
         </Link>
@@ -30,7 +30,7 @@ function LoginPanel({ initialError }: { initialError?: string }) {
 }
 
 /**
- * Renders the PromptFolio login page.
+ * Renders the CreatorIQ login page.
  */
 export default async function LoginPage({
   searchParams,

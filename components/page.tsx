@@ -14,10 +14,10 @@ export default async function CreatorsPage() {
       <nav className="relative z-10 flex justify-between items-center px-8 py-6 max-w-7xl mx-auto">
         <Link href="/" className="flex items-center gap-2">
           <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
-            <span className="text-white font-bold text-sm">P</span>
+            <span className="text-white font-bold text-sm">C</span>
           </div>
           <span className="text-xl font-semibold text-white">
-            PromptFolio
+            CreatorIQ
           </span>
         </Link>
         <Link

@@ -57,7 +57,7 @@ const P = (p: Omit<SeedPortfolio, "media_type"> & { media_type?: "image" | "vide
 
 export const SEED_CREATORS: SeedCreator[] = [
   {
-    email: "aria@promptfolio.demo",
+    email: "aria@creatoriq.demo",
     display_name: "Aria Chen",
     bio: "Cinematic AI filmmaker specializing in premium product ads.",
     location: "Los Angeles, CA",
@@ -74,7 +74,7 @@ export const SEED_CREATORS: SeedCreator[] = [
     signals: ["tool", "workflow", "portfolio", "rights"],
   },
   {
-    email: "marcus@promptfolio.demo",
+    email: "marcus@creatoriq.demo",
     display_name: "Marcus Webb",
     bio: "UGC-style AI creator producing authentic-feeling social ads at volume.",
     location: "Austin, TX",
@@ -91,7 +91,7 @@ export const SEED_CREATORS: SeedCreator[] = [
     signals: ["tool", "portfolio", "workflow"],
   },
   {
-    email: "sofia@promptfolio.demo",
+    email: "sofia@creatoriq.demo",
     display_name: "Sofia Reyes",
     bio: "Fashion & virtual-modeling specialist with editorial-grade AI imagery.",
     location: "Mexico City, MX",
@@ -108,7 +108,7 @@ export const SEED_CREATORS: SeedCreator[] = [
     signals: ["tool", "portfolio", "rights"],
   },
   {
-    email: "david@promptfolio.demo",
+    email: "david@creatoriq.demo",
     display_name: "David Kim",
     bio: "Tech-product filmmaker: launch films, feature tours, and demo ads.",
     location: "San Francisco, CA",
@@ -125,7 +125,7 @@ export const SEED_CREATORS: SeedCreator[] = [
     signals: ["tool", "workflow", "portfolio", "rights"],
   },
   {
-    email: "lena@promptfolio.demo",
+    email: "lena@creatoriq.demo",
     display_name: "Lena Petrova",
     bio: "Beauty & skincare content: macro textures, glow-first cinematography.",
     location: "Berlin, DE",
@@ -142,7 +142,7 @@ export const SEED_CREATORS: SeedCreator[] = [
     signals: ["tool", "portfolio"],
   },
   {
-    email: "omar@promptfolio.demo",
+    email: "omar@creatoriq.demo",
     display_name: "Omar Haddad",
     bio: "Food & beverage motion artist — appetite appeal through AI motion.",
     location: "Dubai, AE",
@@ -159,7 +159,7 @@ export const SEED_CREATORS: SeedCreator[] = [
     signals: ["workflow", "portfolio"],
   },
   {
-    email: "grace@promptfolio.demo",
+    email: "grace@creatoriq.demo",
     display_name: "Grace Liu",
     bio: "Music-video-grade AI visuals and surreal artist content.",
     location: "Toronto, CA",
@@ -176,7 +176,7 @@ export const SEED_CREATORS: SeedCreator[] = [
     signals: ["tool", "portfolio", "workflow"],
   },
   {
-    email: "ethan@promptfolio.demo",
+    email: "ethan@creatoriq.demo",
     display_name: "Ethan Brooks",
     bio: "Performance marketer turned AI creative — hooks, cutdowns, iteration.",
     location: "London, UK",
@@ -193,7 +193,7 @@ export const SEED_CREATORS: SeedCreator[] = [
     signals: ["portfolio", "rights", "workflow"],
   },
   {
-    email: "priya@promptfolio.demo",
+    email: "priya@creatoriq.demo",
     display_name: "Priya Sharma",
     bio: "Luxury & jewelry brand storyteller with painterly AI aesthetics.",
     location: "Mumbai, IN",
@@ -210,7 +210,7 @@ export const SEED_CREATORS: SeedCreator[] = [
     signals: ["tool", "workflow", "portfolio", "rights"],
   },
   {
-    email: "noah@promptfolio.demo",
+    email: "noah@creatoriq.demo",
     display_name: "Noah Fischer",
     bio: "Automotive & travel AI filmmaker — speed, landscape, scale.",
     location: "Munich, DE",
@@ -227,7 +227,7 @@ export const SEED_CREATORS: SeedCreator[] = [
     signals: ["tool", "portfolio", "workflow"],
   },
   {
-    email: "mia@promptfolio.demo",
+    email: "mia@creatoriq.demo",
     display_name: "Mia Johansson",
     bio: "Nordic-minimal product photographer pivoting fully to AI stills.",
     location: "Stockholm, SE",
@@ -244,7 +244,7 @@ export const SEED_CREATORS: SeedCreator[] = [
     signals: ["tool", "portfolio", "rights"],
   },
   {
-    email: "kai@promptfolio.demo",
+    email: "kai@creatoriq.demo",
     display_name: "Kai Tanaka",
     bio: "Anime-inspired character & avatar designer for gaming brands.",
     location: "Osaka, JP",
@@ -261,7 +261,7 @@ export const SEED_CREATORS: SeedCreator[] = [
     signals: ["tool", "workflow", "portfolio"],
   },
   {
-    email: "zara@promptfolio.demo",
+    email: "zara@creatoriq.demo",
     display_name: "Zara Ahmed",
     bio: "Health & wellness creator blending calm cinematic visuals with VO.",
     location: "Dubai, AE",
@@ -278,7 +278,7 @@ export const SEED_CREATORS: SeedCreator[] = [
     signals: ["tool", "portfolio"],
   },
   {
-    email: "felix@promptfolio.demo",
+    email: "felix@creatoriq.demo",
     display_name: "Felix Moreau",
     bio: "High-fashion experimentalist — avant-garde AI runway content.",
     location: "Paris, FR",
@@ -295,7 +295,7 @@ export const SEED_CREATORS: SeedCreator[] = [
     signals: ["tool", "workflow", "portfolio", "rights"],
   },
   {
-    email: "ivy@promptfolio.demo",
+    email: "ivy@creatoriq.demo",
     display_name: "Ivy Zhang",
     bio: "Real-estate & hospitality visualist creating immersive property films.",
     location: "Singapore, SG",

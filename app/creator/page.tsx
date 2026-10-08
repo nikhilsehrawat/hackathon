@@ -2,6 +2,8 @@ import Link from "next/link";
 import { getSupabaseAdmin, getAllCreatorProfiles } from "@/lib/db/client";
 import Nav from "@/components/layout/Nav";
 
+export const instant = false;
+
 export default async function CreatorsPage() {
   const supabase = getSupabaseAdmin();
   const creators = await getAllCreatorProfiles(supabase);

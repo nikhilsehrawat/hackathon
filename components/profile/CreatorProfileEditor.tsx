@@ -50,7 +50,7 @@ export default function CreatorProfileEditor({ profile }: { profile: CreatorProf
       });
       const result = (await response.json()) as { error?: string };
       if (!response.ok) throw new Error(result.error || "Unable to save profile.");
-      window.dispatchEvent(new Event("promptfolio:profile-updated"));
+      window.dispatchEvent(new Event("creatoriq:profile-updated"));
       router.refresh();
       setToast({ message: "Creator profile saved.", type: "success" });
     } catch (error) {

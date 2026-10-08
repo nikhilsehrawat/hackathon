@@ -3,7 +3,7 @@ import LiveDemo from "@/components/LiveDemo";
 import Nav from "@/components/layout/Nav";
 
 /**
- * Renders the public PromptFolio landing page.
+ * Renders the public CreatorIQ landing page.
  */
 export default function Home() {
   return (
@@ -44,7 +44,7 @@ export default function Home() {
         <LiveDemo />
       </section>
 
-      {/* Comparison — Old Way vs PromptFolio */}
+      {/* Comparison — Old Way vs CreatorIQ */}
       <section className="relative z-10 max-w-5xl mx-auto px-8 pb-20">
         <h2 className="text-3xl font-bold text-white text-center mb-10">
           Why not just use <span className="text-gray-500">Fiverr</span>?
@@ -88,7 +88,7 @@ export default function Home() {
             <div className="flex items-center gap-2 mb-4">
               <span className="text-2xl">✨</span>
               <h3 className="text-lg font-semibold text-white">
-                PromptFolio
+                CreatorIQ
               </h3>
             </div>
             <ul className="space-y-3 text-sm text-white">
@@ -163,7 +163,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="relative z-10 border-t border-white/5 py-8 text-center">
         <p className="text-gray-500 text-sm">
-          Built for the AI Creator Economy · PromptFolio © 2026
+          Built for the AI Creator Economy · CreatorIQ © 2026
         </p>
       </footer>
     </main>

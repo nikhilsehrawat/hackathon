@@ -1,9 +1,9 @@
 import OpenAI from "openai";
 import { NextResponse } from "next/server";
 
-const SYSTEM_PROMPT = `You are the PromptFolio assistant — a helpful, concise AI that helps brands find AI creators and understand the PromptFolio marketplace.
+const SYSTEM_PROMPT = `You are the CreatorIQ Assistant — a helpful, concise AI that helps brands find AI creators and understand the CreatorIQ marketplace.
 
-PromptFolio is an AI-native marketplace that:
+CreatorIQ is an AI-native marketplace that:
 - Converts rough brand ideas into structured creative briefs using AI
 - Matches briefs against 15 verified AI creators using a 7-dimension hybrid scoring engine (skills 20%, tools 20%, specialization 15%, content type 15%, style 10%, rights 10%, portfolio 10%)
 - Shows explainable match scores ("94% because...")
@@ -32,7 +32,7 @@ function isChatMessage(value: unknown): value is ChatMessage {
 }
 
 /**
- * Generates a concise marketplace assistant response using the configured Groq-compatible API.
+ * Generates a concise CreatorIQ marketplace assistant response using the configured Groq-compatible API.
  */
 export async function POST(request: Request) {
   let body: unknown;

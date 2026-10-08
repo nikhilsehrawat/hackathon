@@ -79,7 +79,7 @@ export async function runSeed(supabase: SupabaseClient): Promise<SeedResult> {
       id: deterministicId(`sig-${i}`, k),
       creator_id: userId,
       signal_type,
-      evidence_url: `https://verify.promptfolio.demo/${c.email.split("@")[0]}/${signal_type}`,
+      evidence_url: `https://verify.creatoriq.demo/${c.email.split("@")[0]}/${signal_type}`,
       verified: true,
     }));
 
@@ -148,7 +148,7 @@ export async function runSeed(supabase: SupabaseClient): Promise<SeedResult> {
     const userRes = await supabase.from(TABLES.users).upsert(
       {
         id: brandUserId,
-        email: `brand${b}@promptfolio.demo`,
+        email: `brand${b}@creatoriq.demo`,
         role: "brand",
       },
       { onConflict: "id", ignoreDuplicates: true },

@@ -83,7 +83,7 @@ export default function ToolsEditor({ initialTools }: { initialTools: CreatorToo
           Proficiency {proficiency}/5
           <input type="range" min={1} max={5} value={proficiency} onChange={(event) => setProficiency(Number(event.target.value))} className="flex-1 accent-purple-500" />
         </label>
-        <p className="text-xs text-gray-500">Verification badges are added by PromptFolio.</p>
+        <p className="text-xs text-gray-500">Verification badges are added by CreatorIQ.</p>
         {error && <p role="alert" className="text-xs text-red-300">{error}</p>}
         <button disabled={loading || !tool.trim()} className="rounded-lg bg-white/5 px-3 py-2 text-xs text-purple-200 disabled:opacity-50">{loading ? "Adding..." : "Add tool"}</button>
       </form>

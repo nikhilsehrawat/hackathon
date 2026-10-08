@@ -1,4 +1,4 @@
-# hackathon
+# CreatorIQ
 AI Creator Marketplace Hackathon MVP
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
@@ -25,7 +25,7 @@ This project uses [`next/font`](https://nextjs.org/docs/app/building-your-applic
 
 ## Authentication and profiles
 
-PromptFolio uses Supabase Auth sessions with `@supabase/ssr`. Set
+CreatorIQ uses Supabase Auth sessions with `@supabase/ssr`. Set
 `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, and
 `SUPABASE_SERVICE_ROLE_KEY` in `.env.local`. Add each development and production
 origin's `/auth/callback` URL to Supabase Auth's allowed redirect URLs.

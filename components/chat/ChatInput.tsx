@@ -53,7 +53,7 @@ export default function ChatInput({
         onKeyDown={handleKeyDown}
         rows={1}
         maxLength={2000}
-        aria-label="Message the PromptFolio assistant"
+        aria-label="Message the CreatorIQ assistant"
         placeholder="Ask me anything..."
         disabled={disabled}
         className="max-h-[72px] min-h-11 flex-1 resize-none rounded-xl border border-white/10 bg-black/40 px-3 py-2.5 text-sm leading-5 text-white outline-none placeholder:text-gray-500 focus:border-purple-500/50 disabled:opacity-60"

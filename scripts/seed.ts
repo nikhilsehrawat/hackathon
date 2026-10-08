@@ -33,7 +33,7 @@ function getScriptClient(): SupabaseClient {
 
 async function main(): Promise<void> {
   loadEnvLocal();
-  console.log("🌱 Seeding PromptFolio demo data (15 creators, 5 briefs)…");
+  console.log("🌱 Seeding CreatorIQ demo data (15 creators, 5 briefs)…");
   const supabase = getScriptClient();
   const result = await runSeed(supabase);
   console.log(

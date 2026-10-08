@@ -3,6 +3,8 @@ import { notFound } from "next/navigation";
 import { getSupabaseAdmin, getCreatorProfile } from "@/lib/db/client";
 import Nav from "@/components/layout/Nav";
 
+export const instant = false;
+
 export default async function CreatorPage({
   params,
 }: {

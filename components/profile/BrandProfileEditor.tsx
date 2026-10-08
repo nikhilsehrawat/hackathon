@@ -41,7 +41,7 @@ export default function BrandProfileEditor({ profile }: { profile: BrandProfileV
       });
       const result = (await response.json()) as { error?: string };
       if (!response.ok) throw new Error(result.error || "Unable to save profile.");
-      window.dispatchEvent(new Event("promptfolio:profile-updated"));
+      window.dispatchEvent(new Event("creatoriq:profile-updated"));
       router.refresh();
       setToast({ message: "Brand profile saved.", type: "success" });
     } catch (error) {

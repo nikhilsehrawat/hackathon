@@ -10,7 +10,7 @@ import Toast from "@/components/ui/toast";
 export default function AvatarUpload({
   currentUrl,
   label = "Upload image",
-  fallback = "P",
+  fallback = "C",
   onUploaded,
 }: {
   currentUrl: string | null;
@@ -46,7 +46,7 @@ export default function AvatarUpload({
       if (!response.ok || !result.url) throw new Error(result.error || "Upload failed.");
       setPreview(result.url);
       onUploaded?.(result.url);
-      window.dispatchEvent(new Event("promptfolio:profile-updated"));
+      window.dispatchEvent(new Event("creatoriq:profile-updated"));
       router.refresh();
       setToast({ message: "Profile image updated.", type: "success" });
     } catch (error) {
