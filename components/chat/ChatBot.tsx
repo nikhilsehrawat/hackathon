@@ -51,24 +51,47 @@ function readStoredMessages(): ChatMessageData[] {
 export default function ChatBot() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
-  const [messages, setMessages] = useState<ChatMessageData[]>(readStoredMessages);
+  const [messages, setMessages] = useState<ChatMessageData[]>([WELCOME_MESSAGE]);
+  const [hasHydrated, setHasHydrated] = useState(false);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
-  const messagesEndRef = useRef<HTMLDivElement>(null);
+  const messagesContainerRef = useRef<HTMLDivElement>(null);
   const requestRef = useRef(false);
+  const mountedRef = useRef(false);
+  const abortControllerRef = useRef<AbortController | null>(null);
 
   useEffect(() => {
+    const frameId = window.requestAnimationFrame(() => {
+      setMessages(readStoredMessages());
+      setHasHydrated(true);
+    });
+    return () => window.cancelAnimationFrame(frameId);
+  }, []);
+
+  useEffect(() => {
+    if (!hasHydrated) return;
     try {
       window.localStorage.setItem(STORAGE_KEY, JSON.stringify(messages));
     } catch (cause) {
       console.error("[chat] Unable to persist chat history:", cause);
     }
-  }, [messages]);
+  }, [hasHydrated, messages]);
 
   useEffect(() => {
-    if (open) messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [messages, isLoading, open]);
+    mountedRef.current = true;
+    return () => {
+      mountedRef.current = false;
+      abortControllerRef.current?.abort();
+      abortControllerRef.current = null;
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!open) return;
+    const container = messagesContainerRef.current;
+    if (container) container.scrollTop = container.scrollHeight;
+  }, [messages.length, isLoading, open]);
 
   async function sendMessage(content: string, retry = false) {
     const trimmed = content.trim();
@@ -84,25 +107,35 @@ export default function ChatBot() {
     setError("");
     setIsLoading(true);
     requestRef.current = true;
+    const controller = new AbortController();
+    abortControllerRef.current = controller;
 
     try {
       const response = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ messages: updatedMessages.slice(-30) }),
+        signal: controller.signal,
       });
       const result = (await response.json()) as { message?: string; error?: string };
       if (!response.ok || !result.message) {
         throw new Error(result.error || "Chat request failed.");
       }
       const assistantMessage: ChatMessageData = { role: "assistant", content: result.message };
-      setMessages([...updatedMessages, assistantMessage].slice(-60));
+      if (mountedRef.current) {
+        setMessages([...updatedMessages, assistantMessage].slice(-60));
+      }
     } catch (cause) {
-      console.error("[chat] Unable to send message:", cause);
-      setError("Sorry, something went wrong. Try again.");
+      if (!(cause instanceof DOMException && cause.name === "AbortError")) {
+        console.error("[chat] Unable to send message:", cause);
+        if (mountedRef.current) setError("Sorry, something went wrong. Try again.");
+      }
     } finally {
-      setIsLoading(false);
       requestRef.current = false;
+      if (abortControllerRef.current === controller) {
+        abortControllerRef.current = null;
+      }
+      if (mountedRef.current) setIsLoading(false);
     }
   }
 
@@ -169,7 +202,7 @@ export default function ChatBot() {
             </div>
           </header>
 
-          <div className="flex-1 space-y-4 overflow-y-auto p-4" aria-live="polite">
+          <div ref={messagesContainerRef} className="flex-1 space-y-4 overflow-y-auto p-4" aria-live="polite">
             {messages.map((message, index) => (
               <ChatMessage
                 key={`${index}-${message.role}`}
@@ -212,7 +245,6 @@ export default function ChatBot() {
                 </button>
               </p>
             )}
-            <div ref={messagesEndRef} />
           </div>
 
           <div className="shrink-0 space-y-2 border-t border-white/10 p-3">
