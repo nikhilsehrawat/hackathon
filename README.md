@@ -20,6 +20,26 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Authentication and profiles
+
+PromptFolio uses Supabase Auth sessions with `@supabase/ssr`. Set
+`NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, and
+`SUPABASE_SERVICE_ROLE_KEY` in `.env.local`. Add each development and production
+origin's `/auth/callback` URL to Supabase Auth's allowed redirect URLs.
+
+For Groq-powered brief generation, matching explanations, and the marketplace
+chat assistant, set `OPENAI_API_KEY`, `OPENAI_BASE_URL=https://api.groq.com/openai/v1`,
+and `OPENAI_MODEL=openai/gpt-oss-120b` in `.env.local`.
+
+Apply the current SQL printed by `npm run migrate` in the Supabase SQL Editor.
+The profile fields are added with `ALTER TABLE ... ADD COLUMN IF NOT EXISTS`
+statements for existing installations.
+
+Create a **public** Supabase Storage bucket named `avatars`. The app validates
+JPG, PNG, and WebP file signatures and enforces a 5 MB limit. Uploads are
+performed by an authenticated server route using the service-role client; do
+not expose the service-role key in browser code.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
