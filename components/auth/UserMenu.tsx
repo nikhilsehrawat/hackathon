@@ -33,8 +33,18 @@ export default function UserMenu() {
     async function loadProfile() {
       try {
         const { data, error } = await client.auth.getUser();
-        if (error && !isMissingAuthSession(error)) {
-          console.error("[auth/menu] Unable to read user:", error.message);
+        if (error) {
+          const msg = error.message?.toLowerCase() ?? "";
+          if (
+            msg.includes("sub claim") ||
+            msg.includes("does not exist") ||
+            isMissingAuthSession(error)
+          ) {
+            await client.auth.signOut({ scope: "local" });
+            if (active) setProfile(null);
+            return;
+          }
+          console.warn("[auth/menu]", error.message);
         }
         if (!data.user) {
           if (active) {

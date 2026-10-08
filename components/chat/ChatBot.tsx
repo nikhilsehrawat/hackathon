@@ -218,10 +218,10 @@ export default function ChatBot() {
           <div className="shrink-0 space-y-2 border-t border-white/10 p-3">
             <ChatInput value={input} disabled={isLoading} onChange={setInput} onSubmit={() => void sendMessage(input)} />
             <div className="flex items-center justify-between px-1">
-              <Link href="/creators" onNavigate={() => setOpen(false)} className="flex items-center gap-1 text-xs text-gray-400 transition hover:text-purple-300">
+              <Link href="/creators" onClick={() => setOpen(false)} className="flex items-center gap-1 text-xs text-gray-400 transition hover:text-purple-300">
                 Find creators <MessageCircle size={12} aria-hidden="true" />
               </Link>
-              <Link href="/brief/new" onNavigate={() => setOpen(false)} className="flex items-center gap-1 text-xs text-gray-400 transition hover:text-purple-300">
+              <Link href="/brief/new" onClick={() => setOpen(false)} className="flex items-center gap-1 text-xs text-gray-400 transition hover:text-purple-300">
                 New brief <span aria-hidden="true">↗</span>
               </Link>
             </div>

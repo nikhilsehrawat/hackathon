@@ -5,7 +5,6 @@ import { getBriefById, getAllCreatorProfiles } from "@/lib/db/client";
 import { rankCreatorsForBrief } from "@/lib/matching/engine";
 import Nav from "@/components/layout/Nav";
 
-export const instant = false;
 
 export default async function MatchesPage({
   params,

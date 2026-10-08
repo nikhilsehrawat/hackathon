@@ -12,7 +12,6 @@ import { toHttpUrl } from "@/lib/profile/urls";
 import { getSupabaseAdmin, getCreatorProfile } from "@/lib/db/client";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
 
-export const instant = false;
 
 /**
  * Renders an editable owner view or a public creator profile.

@@ -7,7 +7,6 @@ import { connection } from "next/server";
 import { isMissingAuthSession } from "@/lib/supabase/auth-errors";
 import { resolveAccountRole } from "@/lib/supabase/account";
 
-export const instant = false;
 
 /**
  * Renders the signed-in user's dashboard and marketplace activity.

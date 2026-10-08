@@ -20,21 +20,38 @@ export default function Nav({
   useEffect(() => {
     const client = createBrowserClient();
     let active = true;
-    client.auth.getUser()
-      .then(({ data, error }) => {
-        if (error && !isMissingAuthSession(error)) console.error("[layout/nav] Unable to read session:", error.message);
+    async function checkSession() {
+      try {
+        const { data, error } = await client.auth.getUser();
+        if (error) {
+          const msg = error.message?.toLowerCase() ?? "";
+          if (
+            msg.includes("sub claim") ||
+            msg.includes("does not exist") ||
+            isMissingAuthSession(error)
+          ) {
+            await client.auth.signOut({ scope: "local" });
+            if (active) {
+              setSignedIn(false);
+              setChecked(true);
+            }
+            return;
+          }
+          console.warn("[layout/nav]", error.message);
+        }
         if (active) {
           setSignedIn(Boolean(data.user));
           setChecked(true);
         }
-      })
-      .catch((error: unknown) => {
+      } catch (error: unknown) {
         console.error("[layout/nav] Session check failed:", error);
         if (active) {
           setSignedIn(false);
           setChecked(true);
         }
-      });
+      }
+    }
+    void checkSession();
     const { data: { subscription } } = client.auth.onAuthStateChange((_event, session) => {
       setSignedIn(Boolean(session?.user));
       setChecked(true);

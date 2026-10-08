@@ -5,7 +5,6 @@ import { getSupabaseAdmin } from "@/lib/db/client";
 import { isMissingAuthSession } from "@/lib/supabase/auth-errors";
 import { resolveAccountRole } from "@/lib/supabase/account";
 
-export const instant = false;
 
 /**
  * Routes each authenticated user to the public URL for their own profile.

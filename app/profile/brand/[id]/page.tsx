@@ -9,7 +9,6 @@ import { getSupabaseAdmin } from "@/lib/db/client";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
 import { toHttpUrl } from "@/lib/profile/urls";
 
-export const instant = false;
 
 function companyDomain(website: string | null) {
   if (!website) return null;

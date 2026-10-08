@@ -7,7 +7,6 @@ import { createServerSupabaseClient } from "@/lib/supabase/server";
 import { isMissingAuthSession } from "@/lib/supabase/auth-errors";
 import { resolveAccountRole } from "@/lib/supabase/account";
 
-export const instant = false;
 
 /**
  * Renders private settings for the currently authenticated account.

@@ -15,6 +15,7 @@ body {
   background: hsl(var(--background));
   color: hsl(var(--foreground));
   -webkit-font-smoothing: antialiased;
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
 }
 
 .gradient-bg {
@@ -56,6 +57,15 @@ body {
   animation: fadeIn 0.5s ease-out;
 }
 
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.3s ease-out;
+}
+
 @keyframes pulse {
   0%, 100% { opacity: 0.3; }
   50% { opacity: 0.6; }
@@ -65,29 +75,7 @@ body {
   animation: pulse 3s ease-in-out infinite;
 }
 
-@keyframes slideInLeft {
-  from { opacity: 0; transform: translateX(-20px); }
-  to { opacity: 1; transform: translateX(0); }
-}
-
-@keyframes chatPulse {
-  0%, 100% { box-shadow: 0 10px 24px rgba(88, 28, 135, 0.35); }
-  50% { box-shadow: 0 10px 30px rgba(168, 85, 247, 0.55); }
-}
-
-@keyframes typingBounce {
-  0%, 60%, 100% { transform: translateY(0); opacity: 0.45; }
-  30% { transform: translateY(-4px); opacity: 1; }
-}
-
-.typing-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 9999px;
-  background: rgb(216 180 254);
-  animation: typingBounce 1s ease-in-out infinite;
-}
-
 ::-webkit-scrollbar { width: 8px; height: 8px; }
 ::-webkit-scrollbar-track { background: hsl(240, 10%, 4%); }
 ::-webkit-scrollbar-thumb { background: hsl(270, 40%, 30%); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: hsl(270, 60%, 40%); }

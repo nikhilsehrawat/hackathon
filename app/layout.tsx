@@ -1,14 +1,12 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { Suspense } from "react";
-import ChatBot from "@/components/chat/ChatBot";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
   title: "CreatorIQ — AI-Native Creator Marketplace",
-  description: "CreatorIQ connects brands with verified AI creators and turns campaign ideas into explainable creator matches.",
+  description: "Brief-to-verified-creator in 60 seconds.",
 };
 
 export default function RootLayout({
@@ -17,13 +15,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark">
-      <body className={`${inter.variable} font-sans antialiased gradient-bg`}>
-        {children}
-        <Suspense fallback={null}>
-          <ChatBot />
-        </Suspense>
-      </body>
+    <html lang="en">
+      <body className={`${inter.variable} gradient-bg`}>{children}</body>
     </html>
   );
 }
