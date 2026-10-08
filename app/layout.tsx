@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { Suspense } from "react";
-import ChatBot from "@/components/chat/ChatBot";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -20,9 +18,6 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.variable} gradient-bg`}>
         {children}
-        <Suspense fallback={null}>
-          <ChatBot />
-        </Suspense>
       </body>
     </html>
   );
